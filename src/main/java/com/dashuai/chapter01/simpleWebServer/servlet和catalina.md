@@ -9,12 +9,12 @@ servlet 容器，针对一个 servlet 的 request 请求，就做了三件很微
 
 <b>就是三件事，很微小的工作：一个请求处理类，一个响应处理类，一个服务类。</b>
 
-#### catalina 
+#### catalina
 catalina 是 servlet 容器的代称，它的设计开发结构十分优雅，功能结构十分的模块化。
 
 从 servlet 容器的功能角度看，catalian 可以划分为两大模块: connector 模块和 container 模块。
 </br>
-![](/Users/wangyishuai/eclipse-workspace/Tomcat_Study/Tomcat_Study/src/main/resources/image/study/catalina结构.png)
+![](src/main/resources/image/study/catalina01.png)
 
 1. connector 将用户请求与 container 连接
     1.  connector 是为每个它收到的 HTTP 请求建立 request 对象和 response 对象。
