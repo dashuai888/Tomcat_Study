@@ -1,12 +1,10 @@
-package com.dashuai.chapter01.simpleWebServer;
+package com.dashuai.a_simpleServer;
 
 import java.io.*;
 import java.net.Socket;
 
 /**
  * java 的 Socket 类表示一个客户端 socket.
- * 通过 socket ，程序就能从网络中获取和接收数据.
- *
  * @author wangyishuai 2017年10月29日
  */
 public class SocketEg {

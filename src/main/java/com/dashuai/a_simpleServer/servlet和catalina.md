@@ -14,7 +14,7 @@ catalina 是 servlet 容器的代称，它的设计开发结构十分优雅，�
 
 从 servlet 容器的功能角度看，catalian 可以划分为两大模块: connector 模块和 container 模块。
 </br>
-![](https://github.com/dashuai888/Tomcat_Study/blob/master/src/main/resources/image/study/catalina01.png)
+![](catalina01.png)
 
 1. connector 将用户请求与 container 连接
     1.  connector 是为每个它收到的 HTTP 请求建立 request 对象和 response 对象。

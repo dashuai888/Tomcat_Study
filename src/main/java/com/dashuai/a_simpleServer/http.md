@@ -16,7 +16,7 @@
 ## 2. 请求报文格式
 HTTP 报文本身是由多行(用 CR+LF 作换行符，CR=Carriage Return，回车符:16进制 0x0d 和 LF=Line Feed，换行符:16进制 0x0a)数据构成的字符串文本，大致可分为报文首部和报文主体两块。通常，并不一定要有报文主体。
 
-![](https://github.com/dashuai888/Tomcat_Study/blob/master/src/main/resources/image/study/http_req_resp_structure.png)
+![](http_req_resp_structure.png)
 
 ### 2.1. 一个HTTP请求包括三个组成部分
     *  方法—统一资源标识符(URI)—协议/版本
