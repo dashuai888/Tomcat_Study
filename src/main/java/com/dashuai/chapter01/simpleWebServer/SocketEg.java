@@ -1,31 +1,19 @@
 package com.dashuai.chapter01.simpleWebServer;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 /**
- * java 的 Socket 类表示一个客户端 socket，socket是网络连接的端点.
- * <p>
- * 通过 socket ，程序就能从网络中获取和接收数据
+ * java 的 Socket 类表示一个客户端 socket.
+ * 通过 socket ，程序就能从网络中获取和接收数据.
  *
  * @author wangyishuai 2017年10月29日
  */
 public class SocketEg {
     /**
      * 一个 阻塞I/O 客户端的实现案例.
-     *
-     * @param args
-     * @throws IOException
-     * @throws UnknownHostException
-     * @throws InterruptedException
      */
-    public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         /*
          * 创建一个socket流，同时指定该流要连接的主机（通过主机名指定的，当然也能直接指定ip地址）及其对应的端口号 这里本机测试，设置的是回环接口地址.
          * 创建socket，下面就可以通过它来发送或者接收网络数据。
@@ -34,9 +22,8 @@ public class SocketEg {
         // 如果要发送文本，就需要创建一个字符输出流，但是要先建立字节输出流，因为网络数据是字节流的形式
         OutputStream outputStream = socket.getOutputStream();
         // 字符输出流基于上面创建的字节输出流建立，PrintWriter 可以把字节序列使用默认的编码规则格式的转化为字符序列
-        boolean autoFlush = true;
         // 设置自动刷新为true，字符流在输出时，会把缓存的输出流刷新
-        PrintWriter printWriter = new PrintWriter(outputStream, autoFlush);
+        PrintWriter printWriter = new PrintWriter(outputStream, true);
 
         /*
          * 要接收文本，一样的道理，也就是需要读取数据，先创建输入流
@@ -48,9 +35,7 @@ public class SocketEg {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         /*
-         * 模拟发送HTTP请求消息
-         *
-         * @see http.md
+         * 模拟发送HTTP请求消息.
          */
         printWriter.println("GET /Tomcat_Study/src/main/java/com/dashuai/chapter01/simpleWebServer/http.md HTTP/1.1");
         printWriter.println("Host: 127.0.0.1:8111");
